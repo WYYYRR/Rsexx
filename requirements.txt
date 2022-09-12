@@ -1,6 +1,11 @@
 aiofiles
 aiohttp
 asyncio
+datetime
+io
+traceback
+telegraph
+gpytranslate
 dnspython
 ffmpeg-python
 gitpython
