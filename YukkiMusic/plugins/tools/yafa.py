@@ -112,7 +112,7 @@ async def telegraph(client, message):
 
 
 
-@app.on_message(filters.command("invitelink") & ~filters.bot & ~filters.private)
+@app.on_message(filters.command("link") & ~filters.bot & ~filters.private)
 async def invitelink(client, message):
     chid = message.chat.id
     try:
