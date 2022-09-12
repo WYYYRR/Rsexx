@@ -2,9 +2,6 @@ aiofiles
 aiohttp
 asyncio
 datetime
-io
-re
-os
 traceback
 telegraph
 gpytranslate
