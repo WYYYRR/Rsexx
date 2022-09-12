@@ -69,7 +69,7 @@ async def paste(content: str):
     return BASE + resp["message"]
 
 
-@app.on_message(filters.command("paste"))
+@app.on_message(filters.command("pr"))
 async def paste_func(_, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("الرد على رسالة ب  `/paste`")
@@ -97,7 +97,7 @@ async def paste_func(_, message: Message):
             await message.reply_photo(photo=link,quote=False,caption="Pasted",reply_markup=InlineKeyboardMarkup(kb),)
         await m.delete()
     except Exception:
-        await m.edit("ها هي العجينة ", reply_markup=InlineKeyboardMarkup(kb))
+        await m.edit("تفضل", reply_markup=InlineKeyboardMarkup(kb))
 
 
 @app.on_message(filters.command(["telegraph", "tm", "tgm"]))
