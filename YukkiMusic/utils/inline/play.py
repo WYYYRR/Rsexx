@@ -8,7 +8,7 @@
 # All rights reserved.
 
 import random
-
+from config import YAFA_CHANNEL
 from pyrogram.types import InlineKeyboardButton
 
 selections = [
@@ -53,6 +53,11 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         [
             InlineKeyboardButton(
                 text=_["CLOSEMENU_BUTTON"], callback_data="close"
+             ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["YAFA_SUDO"], url=f"{YAFA_CHANNEL}"
             )
         ],
     ]
