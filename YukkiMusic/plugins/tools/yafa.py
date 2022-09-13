@@ -7,12 +7,10 @@ from pyrogram.types import Message, User
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from aiohttp import ClientSession
 import os
-import re
 import aiofiles
 from telegraph import upload_file
-from io import BytesIO
 from traceback import format_exc
-from config import YAFA_NAME, YAFA_CHANNEL
+from config import YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER
 from YukkiMusic import app
 
 
@@ -145,11 +143,12 @@ async def khalid(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(
-                        f"• {YAFA_NAME} •", url=f"{YAFA_CHANNEL}"),
-            ],[
+                InlineKeyboardButton(f"• {YAFA_NAME} •", url=f"{YAFA_CHANNEL}"),
+                ],[
+                InlineKeyboardButton(f"• {SUDO_NAME} •", url=f"{SUDO_USER}"),
+                ],[
                 InlineKeyboardButton("• أضفني الى مجموعتك •", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                ]
             ]
-        ]
-         ),
-     )
+        ),
+    )
