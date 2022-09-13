@@ -64,15 +64,6 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 # Only  Links formats are  accepted for this Var value.
-SUDO_NAME = getenv(
-    "SUDO_NAME", "Ahmad Qa"
-)  #  اسمك عالتيليجرام
-SUDO_USER = getenv(
-    "SUDO_USER", "httpe://t.me/ku_kx"
-)  #  رابط حسابك على التيليجرام
-BOT_USERNAME = getenv(
-    "BOT_USERNAME", "musdrbot"
-)  # معرف بوتك بدون @
 CHANNEL_SUDO = getenv(
     "CHANNEL_SUDO", "YY8GG"
 )  # معرف قناتك بدون @
