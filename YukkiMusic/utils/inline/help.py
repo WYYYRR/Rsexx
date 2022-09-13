@@ -13,6 +13,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from YukkiMusic import app
 
+from config import SUDO_GROUP
 
 def help_pannel(_, START: Union[bool, int] = None):
     first = [
@@ -39,7 +40,7 @@ def help_pannel(_, START: Union[bool, int] = None):
                 ),
                 InlineKeyboardButton(
                     text=_["H_B_2"],
-                    callback_data="help_callback hb2",
+                    url=f"{SUDO_GROUP}",
                 ),
             ],
             [
