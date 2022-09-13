@@ -1,7 +1,7 @@
 # Dev : https://t me/YY8GG
 #Group : https://t.me/YaFaGr
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import requests
+from datetime import datetime
 from pyrogram import filters
 from strings.filters import command
 from gpytranslate import Translator
@@ -11,9 +11,6 @@ from aiohttp import ClientSession
 from pyrogram import filters, Client
 import os
 import re
-import sys
-from typing import Union
-import aiofiles
 from telegraph import upload_file
 from traceback import format_exc
 from config import (YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
