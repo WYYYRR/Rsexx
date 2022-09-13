@@ -17,7 +17,7 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from config import BANNED_USERS, lyrical, YAFA_NAME, CHANNEL_YAFA, CHANNEL_SUDO
+from config import BANNED_USERS, lyrical, YAFA_NAME, YAFA_CHANNEL, CHANNEL_SUDO
 from strings import get_command
 from YukkiMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
                         YouTube, app)
