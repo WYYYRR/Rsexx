@@ -11,9 +11,10 @@ from aiohttp import ClientSession
 from pyrogram import filters, Client
 import os
 import re
+from os import getenv
 from telegraph import upload_file
 from traceback import format_exc
-from config import (YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
+from config import (BANNED_USERS, YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
                     START_IMG_URL, CHANNEL_SUDO, BOT_USERNAME)
 from YukkiMusic import app
 
