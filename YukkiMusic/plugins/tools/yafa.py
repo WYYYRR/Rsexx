@@ -18,25 +18,6 @@ from config import (YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
                     START_IMG_URL, CHANNEL_SUDO, BOT_USERNAME)
 from YukkiMusic import app
 
-force_btn = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                text=f"{YAFA_NAME}", url=f"{YAFA_CHANNEL}"
-            ),                        
-        ],        
-    ]
-)
-async def check_is_joined(message):    
-    try:
-        userid = message.from_user.id
-        status = await app.get_chat_member(f"{CHANNEL_SUDO}", userid)
-        return True
-    except Exception:
-        await message.reply_text( "⚠️︙عذراً عليك الانضمام الى هذهِ القناة أولاً :" ,reply_markup=force_btn,parse_mode="markdown",disable_web_page_preview=False)
-        return False
-
-
 
 @app.on_message(command("ترجمة"))
 async def tr(_, message):
@@ -52,7 +33,7 @@ async def tr(_, message):
             text = message.reply_to_message.caption
     else:
         if len(message.text.split()) <= 2:
-            return await message.reply_text("قدم كود لانج .\n[Available options](https://telegra.ph/Lang-Codes-02-22).\n<b>Usage:</b> <code>/tr ar</code>",disable_web_page_preview=True)
+            return await message.reply_text("أرسل الامر على هذا الشكل :\n[Available options](https://telegra.ph/Lang-Codes-02-22).\n<b>Usage:</b> <code>/tr ar</code>",disable_web_page_preview=True)
         target_lang = message.text.split(None, 2)[1]
         text = message.text.split(None, 2)[2]
     detectlang = await trl.detect(text)
