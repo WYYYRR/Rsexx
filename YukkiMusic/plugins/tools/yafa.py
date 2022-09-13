@@ -22,7 +22,7 @@ force_btn = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text=f"YAFA_NAME}", url=f"{YAFA_CHANNEL}"
+                text=f"{YAFA_NAME}", url=f"{YAFA_CHANNEL}"
             ),                        
         ],        
     ]
