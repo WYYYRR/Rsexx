@@ -4,11 +4,6 @@ from config import (START_IMG_URL, SUDO_NAME, SUDO_USER,
                     YAFA_NAME, YAFA_CHANNEL)
 from YukkiMusic import app
 
-
-
-
-
-
 @app.on_message(
      command(["سورس","المطور","السورس","المبرمج"])
     & filters.group
