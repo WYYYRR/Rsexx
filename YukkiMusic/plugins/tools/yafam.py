@@ -11,7 +11,7 @@ from YukkiMusic.utils.database import is_muted, mute_off
 from YukkiMusic.utils.database import is_music_playing, music_on
 from datetime import datetime
 from config import (BANNED_USERS, MUSIC_BOT_NAME, YAFA_NAME, YAFA_CHANNEL,
-                    SUDR_USER, SUDO_NAMElyrical, START_IMG_URL, MONGO_DB_URI, OWNER_ID)
+                    SUDO_USER, SUDO_NAME, lyrical, START_IMG_URL, MONGO_DB_URI, OWNER_ID)
 from YukkiMusic.utils import bot_sys_stats
 from YukkiMusic.utils.decorators.language import language
 import random
