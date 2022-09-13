@@ -1,13 +1,11 @@
 # Dev : https://t me/YY8GG
 #Group : https://t.me/YaFaGr
 import requests
-from pyrogram import filters
 from strings.filters import command
 from gpytranslate import Translator
 from pyrogram.types import Message, User
 from aiohttp import ClientSession
 from pyrogram import filters, Client
-import os
 import re
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
