@@ -15,8 +15,8 @@ from config import YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER
 from YukkiMusic import app
 
 
-@app.on_message(command(["ترجمه","ترجمة"])
-async def tr(client, message):
+@app.on_message(command("ترجمة"))
+async def tr(_, message):
     trl = Translator()
     if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
         if len(message.text.split()) == 1:
@@ -68,8 +68,8 @@ async def paste(content: str):
     return BASE + resp["message"]
 
 
-@app.on_message(command(["طباعة","طباعه"])
-async def paste_func(client, message: Message):
+@app.on_message(command("طباعة"))
+async def paste_func(_, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("الرد على رسالة ب  `/paste`")
     r = message.reply_to_message
