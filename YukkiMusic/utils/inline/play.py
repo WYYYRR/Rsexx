@@ -57,7 +57,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text=_["YAFA_SUDO"], url=f"{YAFA_CHANNEL}"
+                text=_["YAFA_NAME"], url=f"{YAFA_CHANNEL}"
             )
         ],
     ]
