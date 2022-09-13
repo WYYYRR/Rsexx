@@ -135,24 +135,3 @@ async def invitelink(client, message):
     except:
         return await message.reply_text("قم برفعي مسؤول في المجموعة أولا ؟")
     await message.reply_text(f"**تم إنشاء رابط الدعوة بنجاح :**\n {invitelink}")
-    
-@app.on_message(command(["سورس","السورس","المطور"])
-    & filters.group
-    & ~filters.edited
-)
-async def khalid(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"{START_IMG_URL}",
-        caption=f"""**Bot channel and updates**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                InlineKeyboardButton(f"• {YAFA_NAME} •", url=f"{YAFA_CHANNEL}"),
-                ],[
-                InlineKeyboardButton(f"• {SUDO_NAME} •", url=f"{SUDO_USER}"),
-                ],[
-                InlineKeyboardButton("• أضفني الى مجموعتك •", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-                ]
-            ]
-        ),
-    )
