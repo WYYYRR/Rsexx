@@ -1,10 +1,9 @@
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram import filters, Client
-from typing import Union
 from pyrogram import filters
 from strings.filters import command
 from config import (START_IMG_URL, SUDO_NAME, SUDO_USER,
-                    YAFA_NAME, YAFA_CHANNEL)
+                    YAFA_NAME, YAFA_CHANNEL, BOT_USERNAME)
 from YukkiMusic import app
 
 @app.on_message(
@@ -23,7 +22,8 @@ async def Ahmed(client: Client, message: Message):
                 ],[
                 InlineKeyboardButton(f"• {YAFA_NAME} •", url=f"{YAFA_CHANNEL}"),
                 ],[
-                InlineKeyboardButton(f"• أضفني الى مجموعتك •", url=f"https://t.me/{BOT_USERNAME}?startgroup=new"),  
+                InlineKeyboardButton(f"• أضفني الى مجموعتك •", 
+                                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),  
                 ]
             ]
         ),
