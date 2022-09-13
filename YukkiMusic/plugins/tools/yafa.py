@@ -160,7 +160,7 @@ async def invitelink(client, message):
 )
 async def khalid(client: Client, message: Message):
     await message.reply_photo(
-         photo=f"{START_IMG_URL}",
+        photo=f"{START_IMG_URL}",
         caption=f"""**Bot channel and updates**""",
         reply_markup=InlineKeyboardMarkup(
             [
