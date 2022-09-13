@@ -7,15 +7,34 @@ from gpytranslate import Translator
 from pyrogram.types import Message, User
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from aiohttp import ClientSession
+from pytgcalls.exceptions import NoActiveGroupCall
 from pyrogram import filters, Client
 import os
 import re
 import aiofiles
 from telegraph import upload_file
 from traceback import format_exc
-from config import YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER
+from config import (YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
+                    START_IMG_URL, CHANNEL_SUDO)
 from YukkiMusic import app
 
+force_btn = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                text=f"YAFA_NAME}", url=f"{YAFA_CHANNEL}"
+            ),                        
+        ],        
+    ]
+)
+async def check_is_joined(message):    
+    try:
+        userid = message.from_user.id
+        status = await app.get_chat_member(f"{CHANNEL_SUDO}", userid)
+        return True
+    except Exception:
+        await message.reply_text( "⚠️︙عذراً عليك الانضمام الى هذهِ القناة أولاً :" ,reply_markup=force_btn,parse_mode="markdown",disable_web_page_preview=False)
+        return False
 
 @app.on_message(command("ترجمة"))
 async def tr(_, message):
