@@ -7,7 +7,6 @@ from gpytranslate import Translator
 from pyrogram.types import Message, User
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from aiohttp import ClientSession
-from pytgcalls.exceptions import NoActiveGroupCall
 from pyrogram import filters, Client
 import os
 import re
