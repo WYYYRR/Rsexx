@@ -16,7 +16,7 @@ from config import (BANNED_USERS, YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
 from YukkiMusic import app
 
 
-@app.on_message(command("ترجمة"))
+@app.on_message(command(["ترجمة","/tr"))
 async def tr(_, message):
     trl = Translator()
     if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
@@ -69,10 +69,10 @@ async def paste(content: str):
     return BASE + resp["message"]
 
 
-@app.on_message(command("طباعة"))
+@app.on_message(command(["طباعة","/pr"]))
 async def paste_func(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("الرد على رسالة ب  `/paste`")
+        return await message.reply_text("الرد على رسالة ب  `/pr`")
     r = message.reply_to_message
     if not r.text and not r.document:
         return await message.reply_text("يتم دعم النصوص والمستندات فقط ")
@@ -100,7 +100,7 @@ async def paste_func(_, message: Message):
         await m.edit("فتح الرابط", reply_markup=InlineKeyboardMarkup(kb))
 
 
-@app.on_message(command(["ميديا", "tm", "tgm"]))
+@app.on_message(command(["ميديا", "/tm", "tgm"]))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
@@ -117,13 +117,13 @@ async def telegraph(client, message):
     except Exception as document:
         await message.reply(message, text=document)
     else:
-        button_s = InlineKeyboardMarkup([[InlineKeyboardButton("فتح الرابط🔗", url=f"https://telegra.ph{response[0]}")]])
+        button_s = InlineKeyboardMarkup([[InlineKeyboardButton("فتح الرابط 🔗", url=f"https://telegra.ph{response[0]}")]])
         await message.reply(f"**الرابط »**\n`https://telegra.ph{response[0]}`",disable_web_page_preview=True,reply_markup=button_s)
     finally:
         os.remove(download_location)
 
 
-@app.on_message(command("الرابط") & ~filters.bot & ~filters.private)
+@app.on_message(command(["الرابط","/link"]) & ~filters.bot & ~filters.private)
 async def invitelink(client, message):
     chid = message.chat.id
     try:
