@@ -16,7 +16,7 @@ from YukkiMusic import app
 
 
 @app.on_message(command(["ترجمه","ترجمة"])
-async def tr(_, message):
+async def tr(client, message):
     trl = Translator()
     if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
         if len(message.text.split()) == 1:
@@ -69,7 +69,7 @@ async def paste(content: str):
 
 
 @app.on_message(command(["طباعة","طباعه"])
-async def paste_func(_, message: Message):
+async def paste_func(client, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("الرد على رسالة ب  `/paste`")
     r = message.reply_to_message
