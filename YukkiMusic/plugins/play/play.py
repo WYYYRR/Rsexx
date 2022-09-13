@@ -64,7 +64,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 import config
 
 
-from config import BANNED_USERS, YAFA_NAME, YAFA_CHANNEL, lyrical
+from config import BANNED_USERS, YAFA_NAME, YAFA_CHANNEL, CHANNEL_SUDO, lyrical
 
 
 from strings import get_command
@@ -160,7 +160,7 @@ async def check_is_joined(message):
         userid = message.from_user.id
 
 
-        status = await app.get_chat_member(f"{CHANNEL}", userid)
+        status = await app.get_chat_member(f"{CHANNEL_SUDO}", userid)
 
 
         return True
