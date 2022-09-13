@@ -10,14 +10,16 @@
 import random
 import string
 from ast import ExceptHandler
-
+from pyrogram.types import (InlineKeyboardMarkup,
+                            InlineKeyboardButton)
 from pyrogram import filters
-from pyrogram.types import (InlineKeyboardMarkup, InlineKeyboardButton,
+from pyrogram.types import (InlineKeyboardMarkup,
                             InputMediaPhoto, Message)
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from config import BANNED_USERS, lyrical, YAFA_NAME, YAFA_CHANNEL, CHANNEL_SUDO
+from config import (BANNED_USERS, YAFA_NAME,
+                    YAFA_CHANNEL, CHANNEL_SUDO, lyrical)
 from strings import get_command
 from YukkiMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
                         YouTube, app)
@@ -39,7 +41,7 @@ force_btn = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text=f"{YAFA_NAME}", url=f"{YAFA_CHANNEL}"
+                f"{YAFA_NAME}", url=f"{YAFA_CHANNEL}"
             ),                        
         ],        
     ]
