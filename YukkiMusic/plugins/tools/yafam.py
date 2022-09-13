@@ -1,5 +1,8 @@
-
-
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from typing import Union
+from config import (START_IMG_URL, SUDO_NAME, SUDO_USER,
+                    YAFA_NAME, YAFA_CHANNEL)
+from YukkiMusic import app
 
 
 
@@ -22,7 +25,7 @@ async def Ahmed(client: Client, message: Message):
                 ],[
                 InlineKeyboardButton(f"• {YAFA_NAME} •", url=f"{YAFA_CHANNEL}"),
                 ],[
-                InlineKeyboardButton("• أضفني الى مجموعتك •", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),  
+                InlineKeyboardButton("• أضفني الى مجموعتك •", url=f"https://t.me/{BOT_USERNAME}?startgroup=new"),  
                 ]
             ]
         ),
