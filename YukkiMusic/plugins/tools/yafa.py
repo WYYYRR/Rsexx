@@ -2,6 +2,7 @@
 #Group : https://t.me/YaFaGr
 import requests
 from pyrogram import filters
+from strings.filters import command
 from gpytranslate import Translator
 from pyrogram.types import Message, User
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
@@ -14,7 +15,7 @@ from config import YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER
 from YukkiMusic import app
 
 
-@app.on_message(filters.command("tr"))
+@app.on_message(command(["ترجمه","ترجمة"])
 async def tr(_, message):
     trl = Translator()
     if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
@@ -67,7 +68,7 @@ async def paste(content: str):
     return BASE + resp["message"]
 
 
-@app.on_message(filters.command("pr"))
+@app.on_message(command(["طباعة","طباعه"])
 async def paste_func(_, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("الرد على رسالة ب  `/paste`")
@@ -98,7 +99,7 @@ async def paste_func(_, message: Message):
         await m.edit("فتح الرابط", reply_markup=InlineKeyboardMarkup(kb))
 
 
-@app.on_message(filters.command(["telegraph", "tm", "tgm"]))
+@app.on_message(command(["ميديا", "tm", "tgm"]))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
@@ -122,7 +123,7 @@ async def telegraph(client, message):
 
 
 
-@app.on_message(filters.command("link") & ~filters.bot & ~filters.private)
+@app.on_message(command("الرابط") & ~filters.bot & ~filters.private)
 async def invitelink(client, message):
     chid = message.chat.id
     try:
