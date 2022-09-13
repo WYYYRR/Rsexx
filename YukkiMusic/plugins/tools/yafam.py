@@ -21,7 +21,7 @@ async def Ahmed(client: Client, message: Message):
                 ],[
                 InlineKeyboardButton(f"• {YAFA_NAME} •", url=f"{YAFA_CHANNEL}"),
                 ],[
-                InlineKeyboardButton("• أضفني الى مجموعتك •", url=f"https://t.me/{BOT_USERNAME}?startgroup=new"),  
+                InlineKeyboardButton(f"• أضفني الى مجموعتك •", url=f"https://t.me/{BOT_USERNAME}?startgroup=new"),  
                 ]
             ]
         ),
