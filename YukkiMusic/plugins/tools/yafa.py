@@ -7,11 +7,8 @@ from gpytranslate import Translator
 from pyrogram.types import Message, User
 from aiohttp import ClientSession
 from pyrogram import filters, Client
-from pyrogram import Client, filters
 import os
 import re
-import random
-import time
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from telegraph import upload_file
