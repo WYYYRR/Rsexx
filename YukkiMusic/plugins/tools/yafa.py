@@ -4,7 +4,6 @@ import requests
 from pyrogram import filters
 from gpytranslate import Translator
 from pyrogram.types import Message, User
-from datetime import datetime
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from aiohttp import ClientSession
 import os
@@ -13,6 +12,7 @@ import aiofiles
 from telegraph import upload_file
 from io import BytesIO
 from traceback import format_exc
+from config import YAFA_NAME, YAFA_CHANNEL
 from YukkiMusic import app
 
 
@@ -92,12 +92,12 @@ async def paste_func(_, message: Message):
     kb = [[InlineKeyboardButton(text="رابط اللصق", url=link)]]
     try:
         if m.from_user.is_bot:
-            await message.reply_photo(photo=link,quote=False,caption="Pasted",reply_markup=InlineKeyboardMarkup(kb),)
+            await message.reply_photo(photo=link,quote=False,caption="تم نسخ النص",reply_markup=InlineKeyboardMarkup(kb),)
         else:
-            await message.reply_photo(photo=link,quote=False,caption="Pasted",reply_markup=InlineKeyboardMarkup(kb),)
+            await message.reply_photo(photo=link,quote=False,caption="تم نسخ النص",reply_markup=InlineKeyboardMarkup(kb),)
         await m.delete()
     except Exception:
-        await m.edit("تفضل", reply_markup=InlineKeyboardMarkup(kb))
+        await m.edit("فتح الرابط", reply_markup=InlineKeyboardMarkup(kb))
 
 
 @app.on_message(filters.command(["telegraph", "tm", "tgm"]))
@@ -132,3 +132,24 @@ async def invitelink(client, message):
     except:
         return await message.reply_text("قم برفعي مسؤول في المجموعة أولا ؟")
     await message.reply_text(f"**تم إنشاء رابط الدعوة بنجاح :**\n {invitelink}")
+    
+ @app.on_message(
+    command(["سورس","السورس","المطور"])
+    & filters.group
+    & ~filters.edited
+)
+async def khalid(client: Client, message: Message):
+    await message.reply_photo(
+         photo=f"{START_IMG_URL}",
+        caption=f"""**Bot channel and updates**""",
+        reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                        f"• {YAFA_NAME} •", url=f"{YAFA_CHANNEL}"),
+            ],[
+                InlineKeyboardButton("• أضفني الى مجموعتك •", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+            ]
+        ]
+         ),
+     )
