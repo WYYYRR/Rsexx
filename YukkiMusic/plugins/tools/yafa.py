@@ -11,12 +11,10 @@ from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from telegraph import upload_file
 from traceback import format_exc
-from config import (BANNED_USERS, YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
-                    START_IMG_URL, CHANNEL_SUDO, BOT_USERNAME)
 from YukkiMusic import app
 
 
-@app.on_message(command(["ترجمة","/tr"))
+@app.on_message(command(["ترجمة","/tr"]))
 async def tr(_, message):
     trl = Translator()
     if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
