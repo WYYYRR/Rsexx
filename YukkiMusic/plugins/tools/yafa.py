@@ -1,17 +1,16 @@
 # Dev : https://t me/YY8GG
 #Group : https://t.me/YaFaGr
 import requests
-from datetime import datetime
 from pyrogram import filters
 from strings.filters import command
 from gpytranslate import Translator
 from pyrogram.types import Message, User
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from aiohttp import ClientSession
 from pyrogram import filters, Client
 import os
 import re
-from os import getenv
+from pyrogram.types import (InlineKeyboardButton,
+                            InlineKeyboardMarkup, Message)
 from telegraph import upload_file
 from traceback import format_exc
 from config import (BANNED_USERS, YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
@@ -140,7 +139,7 @@ async def invitelink(client, message):
     & filters.group
     & ~filters.edited
 )
-async def khalid(client: Client, message: Message):
+async def Ahmed(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{START_IMG_URL}",
         caption=f"""**Bot channel and bot updates**""",
