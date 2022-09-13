@@ -15,7 +15,7 @@ import aiofiles
 from telegraph import upload_file
 from traceback import format_exc
 from config import (YAFA_NAME, YAFA_CHANNEL, SUDO_NAME, SUDO_USER,
-                    START_IMG_URL, CHANNEL_SUDO)
+                    START_IMG_URL, CHANNEL_SUDO, BOT_USERNAME)
 from YukkiMusic import app
 
 force_btn = InlineKeyboardMarkup(
