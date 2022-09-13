@@ -1,28 +1,4 @@
-## By : YaFa Music : @YY8GG . DeV : @ku_kx
-
-
-#
-
-
-# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
-
-
-#
-
-
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-
-
-# and is released under the "GNU v3.0 License Agreement".
-
-
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-
-
-#
-
-
-# All rights reserved.
+# By : YaFa Music : @YY8GG . DeV : @ku_kx
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import random
@@ -124,7 +100,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 @app.on_message(
 
 
-    command(PLAY_COMMAND)
+    filters.command(PLAY_COMMAND)
 
 
     & filters.group
