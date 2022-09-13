@@ -132,8 +132,7 @@ async def invitelink(client, message):
         return await message.reply_text("قم برفعي مسؤول في المجموعة أولا ؟")
     await message.reply_text(f"**تم إنشاء رابط الدعوة بنجاح :**\n {invitelink}")
     
- @app.on_message(
-    command(["سورس","السورس","المطور"])
+ @app.on_message(command(["سورس","السورس","المطور"])
     & filters.group
     & ~filters.edited
 )
