@@ -1,7 +1,6 @@
 # Dev : https://t me/YY8GG
 #Group : https://t.me/YaFaGr
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-import random
 import requests
 from pyrogram import filters
 from strings.filters import command
@@ -36,6 +35,8 @@ async def check_is_joined(message):
     except Exception:
         await message.reply_text( "⚠️︙عذراً عليك الانضمام الى هذهِ القناة أولاً :" ,reply_markup=force_btn,parse_mode="markdown",disable_web_page_preview=False)
         return False
+
+
 
 @app.on_message(command("ترجمة"))
 async def tr(_, message):
@@ -162,8 +163,8 @@ async def khalid(client: Client, message: Message):
          photo=f"{START_IMG_URL}",
         caption=f"""**Bot channel and updates**""",
         reply_markup=InlineKeyboardMarkup(
-        [
             [
+                [
                 InlineKeyboardButton(f"• {YAFA_NAME} •", url=f"{YAFA_CHANNEL}"),
                 ],[
                 InlineKeyboardButton(f"• {SUDO_NAME} •", url=f"{SUDO_USER}"),
