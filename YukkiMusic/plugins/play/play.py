@@ -100,7 +100,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 @app.on_message(
 
 
-    filters.command(PLAY_COMMAND)
+    command(["شغل","تشغيل","/play)
 
 
     & filters.group
