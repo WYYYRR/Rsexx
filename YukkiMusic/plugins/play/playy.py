@@ -23,6 +23,7 @@ import config
 from config import BANNED_USERS, CHANNEL_SUDO, YAFA_NAME, YAFA_CHANNEL, lyrical
 
 from strings import get_command
+from strings.filters import command
 from YukkiMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
 
                         YouTube, app)
