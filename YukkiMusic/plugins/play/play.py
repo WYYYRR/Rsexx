@@ -46,7 +46,7 @@ force_btn = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton(
-              text="• تحديثات السورس •", url="https://t.me/yafasor",),                        
+              text="• تحديثات السورس •", url="https://t.me/Tws_Tepthon",),                        
         ],        
     ]
 )
