@@ -1,20 +1,22 @@
-# Dev : https://t me/YY8GG
-#Group : https://t.me/YaFaGr
+# Dev : https://t me/PPF22
+#@vvvznn
 import requests
 from strings.filters import command
 from gpytranslate import Translator
-from pyrogram.types import Message, User
 from aiohttp import ClientSession
 from pyrogram import filters, Client
 import re
+import config
+from config import (YAFA_NAME, YAFA_CHANNEL, SUDO_USER,
+                    START_IMG_URL, BOT_USERNAME)
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from telegraph import upload_file
 from traceback import format_exc
 from YukkiMusic import app
+from typing import Union
 
-
-@app.on_message(command(["ترجمة","/tr"]))
+@app.on_message(command(["ترجمه","/tr"]))
 async def tr(_, message):
     trl = Translator()
     if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
@@ -67,7 +69,7 @@ async def paste(content: str):
     return BASE + resp["message"]
 
 
-@app.on_message(command(["طباعة","/pr"]))
+@app.on_message(command(["طباعه","/pr"]))
 async def paste_func(_, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("الرد على رسالة ب  `/pr`")
@@ -119,13 +121,95 @@ async def telegraph(client, message):
         await message.reply(f"**الرابط »**\n`https://telegra.ph{response[0]}`",disable_web_page_preview=True,reply_markup=button_s)
     finally:
         os.remove(download_location)
+    
+@app.on_message(command(["كول"])
+    & filters.group
+    & ~filters.channel
+    & ~filters.edited
+)
+def echo(client, msg):
+    text = msg.text.split(None, 1)[1]
+    msg.reply(text)
+    
+    
+@app.on_message(command(["الاوامر"])
+    & filters.group
+    & ~filters.edited
+)
+@app.on_message(command(["الاوامر"])
+    & filters.channel
+    & ~filters.edited
+)
+async def ahmad(client: Client, message: Message): 
+  await message.reply_photo(
+    photo=config.START_IMG_URL,
+    caption=f"""‹ أهلا عزيزي اليك اوامر بوت الميوزك ›
 
+↯︙تشغيل شغل : لبدء تشغيل الاغاني
 
-@app.on_message(command(["الرابط","/link"]) & ~filters.bot & ~filters.private)
-async def invitelink(client, message):
-    chid = message.chat.id
-    try:
-        invitelink = await client.export_chat_invite_link(chid)
-    except:
-        return await message.reply_text("قم برفعي مسؤول في المجموعة أولا ؟")
-    await message.reply_text(f"**تم إنشاء رابط الدعوة بنجاح :**\n {invitelink}")
+↯︙بنك : لقياس سرعة النت في البوت
+
+↯︙أوامر القناة : قناه + أسم الأغنية 
+
+↯︙كتم : لكتم الأغنية الحالية
+
+↯︙كمل : لألغاء كتم الأغنبة الحالية
+
+↯︙تخطي : لتخطي الأغنية الحالية
+
+↯︙أمر التحميل : تحميل + اسم الاغنية 
+
+↯︙انهاء او اسكت : لايقاف تشغيل الأغنية الحالية
+
+↯︙طباعة : بالرد على نص لطباعته
+
+↯︙ترجمة : بالرد على نص + en او ar
+
+↯︙ميديا : بالرد على صورة او ملصق
+
+↯︙ملاحظة : أمر التشغيل في القنوات 👇:
+
+↯︙اضف البوت الى قناتك ثم أرسل 👇:
+
+↯︙قناة أو  او شغل او قناه + أسم الاغنية التي تريدها""",
+        reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(" ‹ TeAm Fox ›", url=f"{YAFA_CHANNEL}"),
+                ],[
+         #       InlineKeyboardButton(f"‹ اضف البوت لقناتك ›", url=f"https://t.me/{BOT_USERNAME}?startchannel=true"),
+                ],[
+                InlineKeyboardButton("‹ اضف لمجموعتك ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                ]
+            ]
+        ),
+    )
+    
+@app.on_message(command(["سورس","مبرمج السورس","مصنع","المصنع","مطور السورس","السورس","المطور","المبرمج"])
+    & filters.group
+    & ~filters.edited
+)
+@app.on_message(command(["سورس","مبرمج السورس","مصنع","المصنع","مطور السورس","السورس","المطور","المبرمج"])
+    & filters.channel
+    & ~filters.edited
+)
+async def ahmad(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/edee063a17a3938130c96.jpg",
+        caption=f"""[Developer](https://t.me/vvvvvg)\n\n[Source Channel](https://t.me/vvvznn)\n\n[𝖳𝖾𝖺𝗆 𝗄𝖺𝖽𝗂](https://t.me/IFlFIGBOT)\n\n[ Exp RsEXS ](https://t.me/TwS_RsExS)[𝖣𝖾𝗏 𝖬𝗎𝗌𝗂𝖼](https://t.me/PPF22)""",
+        reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("𝙳𝙴𝚅", url=f"{SUDO_USER}",
+                ),
+                InlineKeyboardButton(f"𝚂𝙾𝚄𝚁𝙲𝙴", url=f"{YAFA_CHANNEL}",
+                ),
+            ],
+            [
+                InlineKeyboardButton("‹ اضف لمجموعتك ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+                ),
+            #    InlineKeyboardButton("‹ اضف البوت لقناتك ›", url=f"https://t.me/{BOT_USERNAME}?startchannel=true",),
+                ]
+            ]
+        ),
+    )
