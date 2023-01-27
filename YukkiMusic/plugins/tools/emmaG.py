@@ -12,7 +12,7 @@ async def Saidi(_, message: Message):
     JABWA = "بلح"
     await message.reply_text(AHMAD)
    
-@app.on_message(command("تويت"))
+@app.on_message(command("كت"))
 async def bottttt(client, message):
     selections = ["اخر افلام شاهدتها", 
 "آخر مرة زرت مدينة الملاهي ؟ ",
@@ -889,7 +889,7 @@ async def bottttt(client, message):
     bar = random.choice(selections)
     await message.reply_text(bar)
 
-@app.on_message(command("لو خيروك"))
+@app.on_message(command("لو"))
 async def bottttt(client, message):
     selections = ["لو خيروك |  بين الإبحار لمدة أسبوع كامل أو السفر على متن طائرة لـ 3 أيام متواصلة؟ ",
 "لو خيروك |  بين شراء منزل صغير أو استئجار فيلا كبيرة بمبلغ معقول؟ ",
